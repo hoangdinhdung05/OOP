@@ -74,19 +74,19 @@ bool PS2::operator > (PS2 a){
     return (this->tu * a.mau > this->mau * a.tu);
 }
 
-void sx(vector<PS2>& v){
-    for(int i = 0; i < v.size()-1; i++){
-        int min = i;
-        for(int j = i + 1; j < v.size(); i++){
-            if(v[min] > v[j]){
-                min = j;
-            }
-        }
-        PS2 tmp = v[i];
-        v[i] = v[min];
-        v[min] = tmp;
-    }
-}
+// void sx(vector<PS2>& v){
+//     for(int i = 0; i < v.size()-1; i++){
+//         int min = i;
+//         for(int j = i + 1; j < v.size(); i++){
+//             if(v[min] > v[j]){
+//                 min = j;
+//             }
+//         }
+//         PS2 tmp = v[i];
+//         v[i] = v[min];
+//         v[min] = tmp;
+//     }
+// }
 
 
 int main(){
@@ -107,10 +107,6 @@ int main(){
     _max.in();
     cout << endl;
     _min.in();
-    cout << "\n Danh sach mang phan so da sap xep:\n";
-    sx(v);
-    for(auto &x : v){
-        x.in();
-    }
+    
     return 0;
 }
