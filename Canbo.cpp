@@ -3,42 +3,42 @@
 using namespace std;
 
 class canbo {
-private:
-    string ten, ns, gt, dc;
-public:
-    canbo() {
-        ten = ns = gt = dc = "";
-    }
-    canbo(string ten, string ns, string gt, string dc) {
-        this->ten = ten;
-        this->ns = ns;
-        this->gt = gt;
-        this->dc = dc;
-    }
+    private:
+        string ten, ns, gt, dc;
+    public:
+        canbo() {
+            ten = ns = gt = dc = "";
+        }
+        canbo(string ten, string ns, string gt, string dc) {
+            this->ten = ten;
+            this->ns = ns;
+            this->gt = gt;
+            this->dc = dc;
+        }
 
-    virtual void xuat();
+        virtual void xuat();
 
-    virtual string getMa() = 0;  // Declare as pure virtual
+        virtual string getMa() = 0;  //them phuong thuc ao cho cac class con
 
-    string getTen() {
-        return ten;
-    }
+        string getTen() {
+            return ten;
+        }
 
-    void setTen(string ten) {
-        this->ten = ten;
-    }
+        void setTen(string ten) {
+            this->ten = ten;
+        }
 
-    void setNs(string ns) {
-        this->ns = ns;
-    }
+        void setNs(string ns) {
+            this->ns = ns;
+        }
 
-    void setGt(string gt) {
-        this->gt = gt;
-    }
+        void setGt(string gt) {
+            this->gt = gt;
+        }
 
-    void setDc(string dc) {
-        this->dc = dc;
-    }
+        void setDc(string dc) {
+            this->dc = dc;
+        }
 };
 
 void canbo::xuat() {
@@ -46,31 +46,31 @@ void canbo::xuat() {
 }
 
 class congnhan : public canbo {
-private:
-    string ma, bac;
-public:
-    congnhan() {
-        ma = bac = "";
-    }
+    private:
+        string ma, bac;
+    public:
+        congnhan() {
+            ma = bac = "";
+        }
 
-    congnhan(string ma, string bac, string ten, string ns, string gt, string dc) : canbo(ten, ns, gt, dc) {
-        this->ma = ma;
-        this->bac = bac;
-    }
+        congnhan(string ma, string bac, string ten, string ns, string gt, string dc) : canbo(ten, ns, gt, dc) {
+            this->ma = ma;
+            this->bac = bac;
+        }
 
-    void xuat();
+        void xuat();
 
-    string getMa() override {  // Override the getMa method
-        return ma;
-    }
+        string getMa() { 
+            return ma;
+        }
 
-    void setMaql(string ma) {
-        this->ma = ma;
-    }
+        void setMaql(string ma) {
+            this->ma = ma;
+        }
 
-    void setBac(string bac) {
-        this->bac = bac;
-    }
+        void setBac(string bac) {
+            this->bac = bac;
+        }
 };
 
 void congnhan::xuat() {
@@ -80,30 +80,30 @@ void congnhan::xuat() {
 }
 
 class kysu : public canbo {
-private:
-    string ma, nganh;
-public:
-    kysu() {
-        ma = nganh = "";
-    }
-    kysu(string ma, string nganh, string ten, string ns, string gt, string dc) : canbo(ten, ns, gt, dc) {
-        this->ma = ma;
-        this->nganh = nganh;
-    }
+    private:
+        string ma, nganh;
+    public:
+        kysu() {
+            ma = nganh = "";
+        }
+        kysu(string ma, string nganh, string ten, string ns, string gt, string dc) : canbo(ten, ns, gt, dc) {
+            this->ma = ma;
+            this->nganh = nganh;
+        }
 
-    void xuat();
+        void xuat();
 
-    string getMa() override {  // Override the getMa method
-        return ma;
-    }
+        string getMa() {  
+            return ma;
+        }
 
-    void setMaks(string ma) {
-        this->ma = ma;
-    }
+        void setMaks(string ma) {
+            this->ma = ma;
+        }
 
-    void setNganh(string nganh) {
-        this->nganh = nganh;
-    }
+        void setNganh(string nganh) {
+            this->nganh = nganh;
+        }
 };
 
 void kysu::xuat() {
@@ -113,30 +113,30 @@ void kysu::xuat() {
 }
 
 class nhanvien : public canbo {
-private:
-    string ma, cv;
-public:
-    nhanvien() {
-        ma = cv = "";
-    }
-    nhanvien(string ma, string cv, string ten, string ns, string gt, string dc) : canbo(ten, ns, gt, dc) {
-        this->ma = ma;
-        this->cv = cv;
-    }
+    private:
+        string ma, cv;
+    public:
+        nhanvien() {
+            ma = cv = "";
+        }
+        nhanvien(string ma, string cv, string ten, string ns, string gt, string dc) : canbo(ten, ns, gt, dc) {
+            this->ma = ma;
+            this->cv = cv;
+        }
 
-    void xuat();
+        void xuat();
 
-    string getMa()  {  // Override the getMa method
-        return ma;
-    }
+        string getMa()  {  
+            return ma;
+        }
 
-    void setManv(string ma) {
-        this->ma = ma;
-    }
+        void setManv(string ma) {
+            this->ma = ma;
+        }
 
-    void setCv(string cv) {
-        this->cv = cv;
-    }
+        void setCv(string cv) {
+            this->cv = cv;
+        }
 };
 
 void nhanvien::xuat() {
