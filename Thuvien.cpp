@@ -109,6 +109,7 @@ class bao : public thuvien{
 //Sach, Tap chi, Bao    
 class quanlithuvien{
     private:
+    //tro toi cac lop co so trong class thuvien
         vector<thuvien*> ds;
     public:
         //them phan tu vao vector
