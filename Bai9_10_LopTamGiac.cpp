@@ -51,6 +51,9 @@ class tamgiac{
         void xuat();
         bool hopLe();
         void check();
+        friend double chuvi(tamgiac);
+        friend double dientich(tamgiac);
+        friend bool sx(tamgiac, tamgiac);
 };
 
 void tamgiac::nhap(){
@@ -70,16 +73,29 @@ void tamgiac::xuat(){
     c.xuat();
     cout << endl;
     cout << c1 << ' ' << c2 << ' ' << c3 << endl;
-    if(hopLe()){
-        cout << "Chu vi: " << c1 + c2 + c3 << endl;
-        cout << "Dien tich: " << c1*c2*c3 << endl;
-    }else{
-        cout << "So lieu khong hop le" << endl;
-    }
 }
 
 bool tamgiac::hopLe(){
     return (c1 > 0 && c2 > 0 && c3 > 0 && c1 + c2 > c3 && c1 + c3 > c2 && c2 + c3 > c1);
+}
+
+double chuvi(tamgiac t){
+    if(t.hopLe()){
+        return t.c1 + t.c2 + t.c3;
+    }
+    return 0;
+}
+
+double dientich(tamgiac t){
+    if(t.hopLe()){
+        double p = chuvi(t) / 2;
+        return sqrt(p * (p - t.c1) * (p - t.c2) * (p - t.c3));
+    }
+    return 0;
+}
+
+bool sx(tamgiac a, tamgiac b){
+    return dientich(a) < dientich(b);
 }
 
 void tamgiac::check(){
